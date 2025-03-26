@@ -12,40 +12,44 @@ import {
 import TotalPrice from "@/Helpers/TotalPrice";
 import TotalQuantity from "@/Helpers/TotalQuantity";
 
-export default function DataTable({ data,setSubTotal }: { data: ProductInterface[] ,setSubTotal:any}) {
+export default function DataTable({ data, setSubTotal }: { data: ProductInterface[]; setSubTotal: any }) {
   const dispatch = useDispatch();
-
   const [products, setProducts] = useState(data);
 
   const increaseCount = (index: number) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((item, i) =>
-        i === index ? { ...item, quantity: (item.quantity) + 1 } : item
-      )
+    const updatedProducts = products.map((item, i) =>
+      i === index ? { ...item, quantity: item.quantity! + 1 } : item
     );
-    updateProducts([products])
+
+    setProducts(updatedProducts);
+    dispatch(updateProducts(updatedProducts));
+    dispatch(updateQuantity(TotalQuantity(updatedProducts)));
   };
 
   const decreaseCount = (index: number) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((item, i) =>
-        i === index && (item.quantity!) > 0
-          ? { ...item, quantity: item.quantity! - 1 }
-          : item
-      )
+    const updatedProducts = products.map((item, i) =>
+      i === index && item.quantity! > 1
+        ? { ...item, quantity: item.quantity! - 1 }
+        : item
     );
-    updateProducts([products])
+
+    setProducts(updatedProducts);
+    dispatch(updateProducts(updatedProducts));
+    dispatch(updateQuantity(TotalQuantity(updatedProducts)));
   };
+
   const handleRemoveFromCart = (product: ProductInterface) => {
-    setProducts((prevProducts) =>
-      prevProducts.filter((item) => item.id !== product.id)
-    );
+    const updatedProducts = products.filter((item) => item.id !== product.id);
+    setProducts(updatedProducts);
     dispatch(removeFromCart({ id: product.id }));
+    dispatch(updateQuantity(TotalQuantity(updatedProducts))); 
   };
+
   useEffect(() => {
-    setSubTotal(TotalPrice(products))
+    setSubTotal(TotalPrice(products));
     dispatch(updateQuantity(TotalQuantity(products)));
   }, [products]);
+
   return (
     <div className="w-full overflow-x-auto">
       <table className="w-full border-collapse">
@@ -83,7 +87,7 @@ export default function DataTable({ data,setSubTotal }: { data: ProductInterface
                   </div>
                   <div className="w-[50%]">
                     <p
-                      className={`text-xs sm:text-xs   lg:text-xl ${styles.productTitle}`}
+                      className={`text-xs sm:text-xs lg:text-xl ${styles.productTitle}`}
                     >
                       {item.title}
                     </p>
@@ -107,7 +111,7 @@ export default function DataTable({ data,setSubTotal }: { data: ProductInterface
                 />
               </td>
               <td className="py-5 px-4 border-b border-[#00000063]">
-                ${(item.price * (item.quantity)).toFixed(2)}
+                ${(item.price * item.quantity).toFixed(2)}
               </td>
             </tr>
           ))}

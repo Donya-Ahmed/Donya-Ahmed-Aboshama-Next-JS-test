@@ -22,14 +22,12 @@ const cartSlice = createSlice({
 
       state.counter = TotalQuantity(state.cartData);
     },
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    addQuantity(state, action) {
-      state.counter = state.counter + 1;
+    addQuantity(state) {
+      state.counter += 1;
     },
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    removeQuantity(state, action) {
+    removeQuantity(state) {
       if (state.counter > 0) {
-        state.counter = state.counter - 1;
+        state.counter -= 1;
       }
     },
     updateQuantity(state, action) {
@@ -37,18 +35,12 @@ const cartSlice = createSlice({
     },
     removeFromCart(state, action) {
       const productId = action.payload.id;
-      const productToRemove = state.cartData.find(
-        (item) => item.id === productId
-      );
-
-      if (productToRemove) {
-        state.counter = state.counter - (productToRemove.quantity || 1);
-        state.cartData = state.cartData.filter((item) => item.id !== productId);
-      }
+      state.cartData = state.cartData.filter((item) => item.id !== productId);
+      state.counter = TotalQuantity(state.cartData); // Ensure counter updates correctly
     },
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     updateProducts(state, action) {
-      state.cartData = [...action.payload];
+      state.cartData = action.payload;
+      state.counter = TotalQuantity(state.cartData);
     },
   },
 });

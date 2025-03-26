@@ -4,7 +4,7 @@ import React from "react";
 import styles from "./Card.module.css";
 import Link from "next/link";
 
-const Card: React.FC<ProductInterface> = ({ id,title, price, image }) => {
+const Card: React.FC<ProductInterface> = ({ id,title, price, image,category }) => {
   return (
   <Link href={`/products/${id}`}>
     <div className="bg-white rounded-xl p-5">
@@ -20,7 +20,8 @@ const Card: React.FC<ProductInterface> = ({ id,title, price, image }) => {
       </div>
       <div className={styles.description}>
         <h3 className={`${styles.title} text-primary`}>{title}</h3>
-        <p className={` ${styles.price} text-primary`}>{price}</p>
+        <h3 className={`${styles.category} text-secondary`}>{category}</h3>
+        <p className={` ${styles.price} text-primary`}>${price}</p>
       </div>
     </div>
   </Link>

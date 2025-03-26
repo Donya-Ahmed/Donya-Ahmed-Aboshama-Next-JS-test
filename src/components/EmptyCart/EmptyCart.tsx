@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import FilledButton from "../Button/FilledButton";
 
 export default function EmptyCart() {
   return (

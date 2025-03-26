@@ -12,6 +12,14 @@
   letter-spacing: 0%;
   vertical-align: middle;
 }
+.category {
+  font-family: var(--font-volkhov) !important;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
 .price {
   font-family: var(--font-jost) !important;
   margin-top: 4px;
