@@ -1,0 +1,11 @@
+.beardcrembsTitle{
+    font-family: var(--font-jost) !important;
+    font-family: Jost;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    
+}

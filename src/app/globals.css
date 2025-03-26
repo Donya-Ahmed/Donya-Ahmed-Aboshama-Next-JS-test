@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -16,7 +19,10 @@ body {
   overflow-x: hidden;
 }
 
-body {
+.main{
+  margin-top: 70px;
+}
+/* body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
@@ -39,4 +45,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */

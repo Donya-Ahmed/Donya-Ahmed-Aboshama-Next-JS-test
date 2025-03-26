@@ -1,16 +1,28 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Jost, Volkhov, Poppins } from "next/font/google";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import { Providers } from "@/Redux/Provider";
+import "./globals.css";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+//  Import Google Fonts
+const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-jost",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const volkhov = Volkhov({
+  subsets: ["latin"],
+  variable: "--font-volkhov",
+  weight: ["400", "700"],
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -25,8 +37,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body
+        className={`${jost.variable} ${volkhov.variable}  ${poppins.variable}`}
+      >
+        <Providers>
+          <main className="container min-h-screen mx-auto xl:max-w-[1280px]">
+            <Navbar />
+           <div className="pt-24">{children}</div>
+          </main>
+          <Footer/>
+        </Providers>
       </body>
     </html>
   );

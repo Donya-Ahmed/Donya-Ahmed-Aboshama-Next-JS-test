@@ -1,0 +1,43 @@
+.navbar {
+  height: 58px;
+  position: sticky;
+  top: 70px !important;
+}
+.logo {
+  font-family: var(--font-volkhov) !important;
+}
+.linkNavbar {
+  position: relative;
+}
+.linkNavbar::before {
+  content: "";
+  background-color: #484848;
+  height: 1px;
+  position: absolute;
+  width: 0%;
+  top: 100%;
+  transition: width 0.8s;
+}
+.linkNavbar:hover::before {
+  width: 100%;
+}
+.link {
+  font-family: var(--font-poppins) !important;
+}
+.cartBag {
+  position: relative !important;
+}
+.badge {
+  background-color: #ff0606;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  font-family: var(--font-volkhov) !important;
+  position: absolute;
+  top: -5px;
+  left: 60%;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2;
+}

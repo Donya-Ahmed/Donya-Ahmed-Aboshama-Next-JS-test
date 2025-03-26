@@ -1,0 +1,23 @@
+.image {
+  height: 402px;
+}
+.description {
+  margin-top: 20px;
+}
+.title {
+  font-family: var(--font-volkhov) !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+.price {
+  font-family: var(--font-jost) !important;
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
