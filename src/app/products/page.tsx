@@ -5,7 +5,7 @@ import Loader from "@/components/Loader/Loader";
 import { useGetProductsQuery } from "@/Redux/Slices/apiSlice";
 import ProductsView from "@/Views/ProductsView/ProductsView";
 
-export default function Home() {
+export default function Page() {
   const { data: products, error, isLoading } = useGetProductsQuery({});
   return (
  <div>

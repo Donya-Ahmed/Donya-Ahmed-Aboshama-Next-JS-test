@@ -1,0 +1,30 @@
+.outlinedButton {
+  width: 100%;
+  height: 45px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  font-family: var(--font-volkhov) !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+}
+.filledButton {
+  width: 100%;
+  height: 66px;
+  box-shadow: 0px 20px 35px 0px #00000026;
+  font-family: var(--font-poppins) !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 10px;
+  background: #000000;
+  color: white;
+}

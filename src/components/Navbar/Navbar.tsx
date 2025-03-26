@@ -14,9 +14,7 @@ import { RootState } from "@/Redux/store";
 import { useSelector } from "react-redux";
 
 const Navbar: React.FC = () => {
-  const counter: number = useSelector(
-    (state: RootState) => state.cart.counter
-  );
+  const counter: number = useSelector((state: RootState) => state.cart.counter);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -64,10 +62,15 @@ const Navbar: React.FC = () => {
             size={24}
           />
           <IoStarOutline className="text-secondary cursor-pointer" size={24} />
-          <span className={styles.cartBag}>
-          <IoBagOutline className={` text-secondary cursor-pointer`} size={24} />
-          <div className={styles.badge}>{counter}</div>
-          </span>
+          <Link href="/cart">
+            <span className={styles.cartBag}>
+              <IoBagOutline
+                className={` text-secondary cursor-pointer`}
+                size={24}
+              />
+              <div className={styles.badge}>{counter}</div>
+            </span>
+          </Link>
         </div>
         <button
           className="md:hidden text-secondary"

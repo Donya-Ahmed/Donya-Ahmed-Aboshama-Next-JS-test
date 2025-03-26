@@ -61,6 +61,7 @@ const ProductsView = ({ data }: PropsProduct) => {
             id={product.id}
             description={""}
             category={""}
+            quantity={0}
             rating={{
               rate: 0,
               count: 0,

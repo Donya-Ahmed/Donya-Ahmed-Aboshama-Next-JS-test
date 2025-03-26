@@ -1,0 +1,13 @@
+.labelCheckbox {
+  font-family: var(--font-poppins) !important;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+  color: #8a8a8a;
+}
+.shippingPrice {
+  color: #000000;
+}

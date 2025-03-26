@@ -5,6 +5,7 @@ export default interface ProductInterface {
   description: string;
   category: string;
   image: string;
+  quantity:number
   rating: {
     rate: number;
     count: number;

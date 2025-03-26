@@ -1,0 +1,27 @@
+.quantityContainer {
+  width: 128px;
+  height: 46px;
+  border-radius: 4px;
+  border: 1px solid #eeeeee;
+  font-family: var(--font-jost) !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+}
+.btnQuantity {
+  width: 43px;
+  height: 46px;
+  font-family: var(--font-jost) !important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

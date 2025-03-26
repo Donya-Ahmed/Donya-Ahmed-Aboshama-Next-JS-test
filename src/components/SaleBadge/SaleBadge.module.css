@@ -1,0 +1,19 @@
+.save {
+  width: 73px;
+  height: 21px;
+  padding-top: 2.5px;
+  padding-right: 9.69px;
+  padding-bottom: 2.5px;
+  padding-left: 10px;
+  gap: 4.61px;
+  border-radius: 11px;
+  background: #da3f3f;
+  color: white;
+  font-family: var(--font-jost) !important;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  text-transform: uppercase;
+}

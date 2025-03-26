@@ -17,10 +17,10 @@ export default function StarRating({ rating }: { rating: number }) {
       stars.push(<IoStarHalf key="half" className="text-primary text-xl" />);
     }
   
-    //  for empty star
+    // for empty stars
     for (let i = 0; i < emptyStars; i++) {
       stars.push(<IoStarOutline key={`empty-${i}`} className="text-gray-400 text-xl" />);
     }
   
-    return <div className="flex">{stars}</div>;
+    return <div className="flex gap-2 items-center"><div className="flex">{stars}</div>({rating})</div>;
 }
